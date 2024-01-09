@@ -4,6 +4,8 @@ using System.Runtime.InteropServices;
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Metrics;
+using System.Numerics;
+using System.Runtime.Intrinsics;
 
 namespace UnmanagedCollections.Generic;
 
@@ -158,9 +160,11 @@ public readonly unsafe struct UnmanagedArray<T> : IEnumerable<T>, IDisposable wh
         };
     }
 
-    public void Fill(in T value)
+    public void Fill(T value)
     {
-        throw new NotImplementedException();
+        ref var managedPointer = ref Unsafe.AsRef<T>(Pointer);
+
+        MemoryOperations.Fill(ref managedPointer, (nuint)Length, value);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
