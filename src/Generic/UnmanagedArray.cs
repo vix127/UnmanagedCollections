@@ -2,10 +2,6 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Collections;
-using System.Diagnostics.CodeAnalysis;
-using System.Diagnostics.Metrics;
-using System.Numerics;
-using System.Runtime.Intrinsics;
 
 namespace UnmanagedCollections.Generic;
 

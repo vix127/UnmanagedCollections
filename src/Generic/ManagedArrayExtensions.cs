@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace UnmanagedCollections.Generic;
+﻿namespace UnmanagedCollections.Generic;
 
 public static class ManagedArrayExtensions
 {
