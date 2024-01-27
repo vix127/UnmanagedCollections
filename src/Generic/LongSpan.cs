@@ -18,12 +18,6 @@ public readonly ref struct LongSpan<T> where T : unmanaged
 
         _reference = ref reference;
         _length = length;
-
-        Span<int> x = stackalloc int[200];
-
-        x[6] = 4;
-
-        this[4] = default;
     }
 
     public ref T this[long index]
